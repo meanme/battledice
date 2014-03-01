@@ -44,7 +44,6 @@ PlayerSchema.methods.initialize = () ->
     heroes = config.heroes
 
     for hero in heroes
-
         this.activeSet.push hero.name
 
         # Change to the global identifier for the hero progression

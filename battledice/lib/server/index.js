@@ -45,7 +45,7 @@
   port = process.env.PORT || 3000;
 
   http.createServer(app).listen(port, function() {
-    return console.log("" + process.pid + ", listening. Go to: http://localhost:" + port + "/");
+    return console.log("" + process.pid + ", listening to port:" + port );
   });
 
   /*

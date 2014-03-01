@@ -12,8 +12,6 @@ requirePaths =
         jquery: "//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min"
         underscore: "//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min"
         backbone: "//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min"
-        ###text: "/js/lib/text"
-        handlebars: "/js/lib/handlebars"###
 
 if jsPaths
     for own key, value of jsPaths

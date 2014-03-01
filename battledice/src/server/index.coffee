@@ -23,6 +23,7 @@ fs.readdirSync(models_path).forEach (file) ->
 
 require('../config/passport') passport, config
 
+console.log express
 app = express()
 
 require('../config/express')(app, config, passport)
@@ -33,7 +34,7 @@ require('../app/helpers/general')(app)
 
 port = process.env.PORT or 3000
 http.createServer(app).listen port, ->
-    console.log "#{process.pid}, listening. Go to: http://localhost:#{port}/"
+    console.log "#{process.pid}, listening to port :#{port}"
 
 ###
 https.createServer(
