@@ -1,7 +1,7 @@
 {
     "name": "battledice",
     "version": "0.0.0",
-    "description": "Dice Battle game inspired by Quarriors!",
+    "description": "Dice Battle game inspired by Eredan Arena and Quarriors!",
     "main": "index.js",
     "directories": {
         "test": "test"
@@ -11,16 +11,24 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://meanme@bitbucket.org/meanme/coffee_node.git"
+        "url": "https://github.com/meanme/battledice"
     },
     "keywords": [
-        "coffee",
-        "socket.io",
-        "multiplayer",
-        "music"
+        "battledice",
+        "yahtzee",
+        "dice"
     ],
     "dependencies": {
-        "request": "~2.9.3"
+        "request": "~2.9.3",
+        "bcrypt": "0.7.7",
+        "connect-assets": "2.5.3",
+        "connect-assets-jspaths": "0.0.9",
+        "connect-flash": "0.1.1",
+        "connect-mongo": "0.4.0",
+        "less": "1.5.1",
+        "moment": "2.4.0",
+        "passport-local": "0.1.6",
+        "passport-facebook": "1.0.2"
     },
     "devDependencies": {
         "coffee-script": "~1.3.0"
