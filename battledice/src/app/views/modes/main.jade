@@ -1,0 +1,54 @@
+extends ../layout
+
+block title
+    | BattleDice
+
+block content
+
+    script.
+        window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        function( callback ){
+        window.setTimeout(callback, 1000 / 60);
+        };
+        })();
+    if !req.user
+        p Authenticate first
+    else
+
+        script.
+            window.heroesCatalog = !{JSON.stringify(heroesCatalog)}
+            window.playerJson = !{JSON.stringify(playerJson)}
+
+        div#main-mode.game-mode
+            #player-profile
+                div.player-level
+                    div Level: #{level}
+                div.player-xp
+                    meter(value="#{xp}", min='0', max='100')
+
+            div#heroWrapper
+                div Your Heroes
+                div#scroller
+                    ul
+                        each hero in heroesCatalog
+                            include ../game/hero-thumb
+
+            // TODO - Allow players to select their own
+            // active set of heroes instead of picking randomly
+            div#activeSetHeroes
+                ul
+                    li
+                    li
+                    li
+                    li
+                    li
+
+            div.centeredBtn
+                button#playBtn.pure-button Start Match
+
+        include ./match
+        include ./market
+        include ./results

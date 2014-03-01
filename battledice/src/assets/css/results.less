@@ -1,0 +1,87 @@
+#matchSummary {
+  background: rgb(0,0,0);
+  min-height: 100px;
+  width: 400px;
+  margin: auto;
+  list-style: none;
+  padding-left: 0;
+}
+
+.roundSummary {
+  background: rgba(255, 255, 255, 0.7);
+  width: 400px;
+  height: 80px;
+  text-align: left;
+  position: relative;
+}
+
+.hero0 {
+  .heroPic {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 70px;
+    height: 70px;
+  }
+  .diceSummary {
+    position: absolute;
+    left: 80px;
+    top: 5px;
+  }
+  .totalDamage {
+    position: absolute;
+    left: 80px;
+    top: 30px;
+  }
+}
+
+.hero1 {
+  .heroPic {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 70px;
+    height: 70px;
+  }
+  .diceSummary {
+    text-align: right;
+    position: absolute;
+    right: 80px;
+    bottom: 5px;
+  }
+  .totalDamage {
+    text-align: right;
+    position: absolute;
+    right: 80px;
+    bottom: 30px;
+  }
+}
+
+.outcome {
+  position: absolute;
+  left: 150px;
+  top: 55px;
+  width: 100px;
+  .rotate;
+  text-align: center;
+  font-family: 'Molot';
+  font-size: 20px;
+}
+
+.rotate (@degrees: -30deg) {
+  trasform: rotate(@degrees);
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+
+  transform-origin: 0% 50%;
+  -webkit-transform-origin: 0% 50%;
+}
+
+#resultBtn {
+  position: fixed;
+  bottom: 20px;
+  margin: 0 0 0 -40px;
+  left:50%;
+}

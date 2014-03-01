@@ -1,0 +1,74 @@
+doctype 5
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        title
+            block title
+            | - #{appName}
+        meta(name='description', content='Form5 Node.js skeleton that uses Express, Mongoose, Coffeescript, LESS css, Twitter bootstrap and more...')
+        link(rel='icon', href='/img/favicon.ico', type='image/x-ico')
+        link(rel='shortcut icon', href='/img/favicon.ico', type='image/vnd.microsoft.icon')
+        meta(property='fb:app_id', content='438134219641787')
+        meta(property='og:title', content='#{title}')
+        meta(property='og:description', content='Form5 Node.js skeleton that uses Express, Mongoose, Coffeescript, LESS css, Twitter bootstrap and more...')
+        meta(property='og:type', content='website')
+        meta(property='og:url', content='https://github.com/olafurnielsen/form5-node-express-mongoose-coffeescript')
+        meta(property='og:image', content='http://blog.getbootstrap.com/wp-content/themes/bootstrap-blog/img/bootstrap-blog-logo.png')
+        meta(property='og:site_name', content='Form5 Node.js skeleton')
+        meta(property='fb:admins', content='100002520766141')
+
+        script(src="http://code.jquery.com/jquery-2.0.0.min.js")
+        //!= js('vendor/jquery/jquery-latest.js')
+
+        != exportPaths("jsPaths")
+
+        // No need for AMD if the user is not logged in
+        if req.user
+            - var mainJsPath = jsUrl("/js/main.js")
+            //script(type="text/javascript", data-main="#{mainJsPath}", src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.0.2/require.min.js")
+            //script(type="text/javascript", data-main="js/main.js", src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.0.2/require.min.js")
+            script(type="text/javascript", data-main="#{mainJsPath}", src="//localhost:3000/js/vendor/requirejs/require.js")
+
+        != js('vendor/require')
+
+
+        != css('style')
+        != css('main')
+
+        // Game Modes Styles
+        != css('results')
+
+        != css('vendor/pure/pure-min.css')
+        //!= css('vendor/bootstrap/css/bootstrap')
+        //!= css('vendor/bootstrap/css/bootstrap-responsive')
+
+        // Tipsy Tooltip Plugin for jQuery
+        // https://github.com/jaz303/tipsy
+        //!= css('vendor/tipsy/tipsy')
+        //!= js('vendor/tipsy/jquery.tipsy')
+
+        // if lte IE 9
+          !css('style-ie9-lte')
+        //if lt IE 9
+          script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    body
+        .navbar.navbar-inverse.navbar-fixed-top
+            .navbar-inner
+                .container
+                    .nav-collapse.collapse
+                        if req.user
+                            p.navbar-text.pull-right
+                                | Welcome, #{req.user.name}
+                                | |
+                                a(href='/logout') logout
+                        else
+                            p.navbar-text.pull-left
+                                a(href='/auth/facebook') FacebookAuth
+                            p.navbar-text.pull-right
+                                a(href='/login') Login
+        .container
+            block content
+
+        //!= js('vendor/bootstrap')

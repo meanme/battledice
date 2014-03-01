@@ -1,0 +1,12 @@
+li.heroProfile
+    div.heroName Name: #{hero.name}
+    img(src= "#{hero.preview}")
+
+    //div.squaredOne
+    //    input(type="checkbox", value="None", id="squaredOne", name="check")
+    //    label(for="squaredOne")
+
+    input.heroSelected(type="checkbox", id="#{hero.name}")
+    input.heroId(type="hidden", value="#{hero.name}")
+
+    div.heroLevel 0
