@@ -14,8 +14,35 @@ block content
         window.setTimeout(callback, 1000 / 60);
         };
         })();
+
+    script(type='text/javascript')
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-31402499-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
     if !req.user
-        p Authenticate first
+
+        div#introWrapper
+            div#introContent
+                div.introTitle BattleDice
+                div.introDescription
+                    p Battledice is a development project inspired by&nbsp;
+                        a(href="http://www.eredan-arena.com/", target="_blank") Eredan Arena&nbsp;
+                        | and&nbsp;
+                        a(href="http://wizkidsgames.com/quarriors/", target="_blank") Quarriors!
+
+                    p Implemented using node.js and CoffeeScript players can login using local or facebook passport strategies. Accounts persistence is implemented in MongoDB with mongoose.
+                    p Start a match and fight your enemy’s heroes matching your card’s ability cost or performing basic attacks. Rules will be familiar if you played Yahtzee.
+                    p Source code available on&nbsp;
+                        a(href="https://github.com/meanme/battledice", target="_blank") github
+
+                    p You must authenticate to play
+
     else
 
         script.

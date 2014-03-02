@@ -3,6 +3,42 @@
 	src: url("../font/Molot.otf");
 }
 
+#introWrapper {
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-200px 0 0 -180px;
+  width: 380px;
+  height: 410px;
+}
+
+#introContent {
+  background: #a5a5a5;
+  position: relative;
+  width: 360px;
+  height: 400px;
+  border-radius: 3px;
+
+  .introTitle {
+    text-align: center;
+    width: 100%;
+    font-size: 26px;
+    font-family: 'Molot';
+  }
+
+  .introDescription {
+    margin: 20px 10px;
+    color: rgb(49, 49, 49);
+
+    a, a:visited, a:hover {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+    }
+
+  }
+}
+
 #player-profile {
   color: #FFFFFF;
   background-color: rgb(50,50,50);

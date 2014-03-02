@@ -23,7 +23,6 @@ fs.readdirSync(models_path).forEach (file) ->
 
 require('../config/passport') passport, config
 
-console.log express
 app = express()
 
 require('../config/express')(app, config, passport)
@@ -47,7 +46,7 @@ https.createServer(
 
 ###
 expressApp.configure( () ->
-    expressApp.set 'viewss', "#{__dirname}/views"
+    expressApp.set 'views', "#{__dirname}/views"
     expressApp.set 'view engine', 'jade'
     expressApp.use express.cookieParser()
     expressApp.use express.bodyParser()
